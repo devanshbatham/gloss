@@ -1,7 +1,5 @@
 # Feature Test Document
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://example.com) [![License](https://img.shields.io/badge/license-MIT-blue)](https://example.com) [![Python](https://img.shields.io/badge/python-3.12-yellow)](https://example.com) [![Coverage](https://img.shields.io/badge/coverage-94%25-green)](https://example.com)
-
 This is the introduction paragraph that should have a drop cap on the first letter. It demonstrates the editorial styling with justified text, automatic hyphenation, and the warm parchment aesthetic. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 ## Typography and Fonts

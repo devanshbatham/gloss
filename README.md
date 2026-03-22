@@ -1,4 +1,4 @@
-# Gloss
+# gloss
 
 ✨ Convert Markdown files into beautiful, editorial-style HTML pages.
 
@@ -22,7 +22,6 @@
 - **Text highlighting**: select text, click the marker to highlight. Persists across refreshes.
 - **GitHub-style alerts**: `> [!NOTE]`, `> [!TIP]`, `> [!IMPORTANT]`, `> [!WARNING]`, `> [!CAUTION]`
 - **Footnotes**: `[^1]` references with auto-numbered backlinks
-- **Badge rows**: inline shield/badge images rendered side-by-side and centered
 - **Syntax highlighting**: via highlight.js
 - **KaTeX**: math rendering
 - **Mermaid**: diagram support
@@ -34,8 +33,6 @@
 - **Emoji shortcodes**: `:fire:` → 🔥, `:rocket:` → 🚀, `:check:` → ✅, and ~100 more
 - **Back-to-top button**: floating arrow that appears on scroll
 - **Reading progress bar**: thin accent-colored bar at the top of the page
-- **Collapsible sections**: styled `<details>` / `<summary>` elements
-- **Print-friendly**: `@media print` stylesheet for clean Ctrl+P output
 - **Default theme flag**: `--theme` to set the initial theme
 - Hover effects on code blocks, tables, and diagrams
 - Smooth theme transitions
