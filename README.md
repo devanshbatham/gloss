@@ -35,13 +35,13 @@
 Install `gloss` as a global CLI tool using [uv](https://docs.astral.sh/uv/):
 
 ```bash
-uv tool install git+https://github.com/devansh/gloss
+uv tool install git+https://github.com/devanshbatham/gloss
 ```
 
 Or from a local clone:
 
 ```bash
-git clone https://github.com/devansh/gloss.git
+git clone https://github.com/devanshbatham/gloss.git
 cd gloss
 uv tool install .
 ```
@@ -74,7 +74,7 @@ python3 gloss.py input.md [output.html]
 Install gloss into your project:
 
 ```bash
-uv pip install git+https://github.com/devansh/gloss
+uv pip install git+https://github.com/devanshbatham/gloss
 ```
 
 Convert a markdown string to a self-contained HTML string:
