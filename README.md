@@ -20,10 +20,23 @@
 - **Zen mode**: for distraction-free reading
 - **Table of contents**: sidebar with hover previews
 - **Text highlighting**: select text, click the marker to highlight. Persists across refreshes.
+- **GitHub-style alerts**: `> [!NOTE]`, `> [!TIP]`, `> [!IMPORTANT]`, `> [!WARNING]`, `> [!CAUTION]`
+- **Footnotes**: `[^1]` references with auto-numbered backlinks
+- **Badge rows**: inline shield/badge images rendered side-by-side and centered
 - **Syntax highlighting**: via highlight.js
 - **KaTeX**: math rendering
 - **Mermaid**: diagram support
 - **Image lightbox** — click images to zoom
+- **Task lists**: `- [x]` / `- [ ]` rendered as styled checkboxes
+- **Heading anchors**: hover any heading to get a `#` permalink (click to copy)
+- **Reading time**: word count and estimated reading time under the title
+- **In-page search**: press `/` or `s` to search with keyboard navigation
+- **Emoji shortcodes**: `:fire:` → 🔥, `:rocket:` → 🚀, `:check:` → ✅, and ~100 more
+- **Back-to-top button**: floating arrow that appears on scroll
+- **Reading progress bar**: thin accent-colored bar at the top of the page
+- **Collapsible sections**: styled `<details>` / `<summary>` elements
+- **Print-friendly**: `@media print` stylesheet for clean Ctrl+P output
+- **Default theme flag**: `--theme` to set the initial theme
 - Hover effects on code blocks, tables, and diagrams
 - Smooth theme transitions
 - Fully self-contained single HTML file output
@@ -57,16 +70,19 @@ uv pip install .
 ## Usage
 
 ```bash
-gloss input.md                  # outputs input.html
-gloss input.md output.html      # custom output path
+gloss input.md                        # outputs input.html
+gloss input.md output.html            # custom output path
+gloss input.md --theme dracula        # set default theme
 ```
+
+Available themes: `light` (default), `dark`, `sepia`, `nord`, `dracula`, `green`, `rose`, `ocean`.
 
 ### Standalone (no install)
 
 Run the single file directly:
 
 ```bash
-python3 gloss.py input.md [output.html]
+python3 gloss.py input.md [output.html] [--theme THEME]
 ```
 
 ## Using as a Library
@@ -83,7 +99,9 @@ Convert a markdown string to a self-contained HTML string:
 import gloss
 
 html = gloss.render("# Hello World\n\nThis is **gloss**.")
-# html is a complete, self-contained HTML page string
+
+# With a specific default theme
+html = gloss.render("# Hello World\n\nThis is **gloss**.", theme="nord")
 
 # Write it yourself, serve it, embed it — whatever you need
 with open("output.html", "w") as f:
@@ -101,11 +119,21 @@ html = gloss.convert("report.md", "report.html")
 
 # output_path is optional — defaults to replacing .md with .html
 html = gloss.convert("report.md")  # writes report.html
+
+# With a default theme
+html = gloss.convert("report.md", theme="ocean")
 ```
+
+## Keyboard Shortcuts
+
+| Key | Action |
+|-----|--------|
+| `/` or `s` | Open search |
+| `Escape` | Close search / lightbox / exit zen mode |
 
 ## Try It
 
-The repo includes `test_all_features.md`, a comprehensive markdown file that exercises all supported features (headings, code blocks, math, mermaid diagrams, tables, images, blockquotes, etc.). Use it to see what gloss produces:
+The repo includes `test_all_features.md`, a comprehensive markdown file that exercises all supported features (headings, code blocks, math, mermaid diagrams, tables, images, blockquotes, alerts, footnotes, task lists, emoji, collapsible sections, etc.). Use it to see what gloss produces:
 
 ```bash
 gloss test_all_features.md

@@ -439,6 +439,15 @@ TEMPLATE = r'''<!DOCTYPE html>
     border: 1px solid var(--border);
     text-align: left;
   }
+  .toc-preview th {
+    font-weight: 700;
+    background-color: var(--table-header-bg);
+    font-family: 'Iosevka', 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+  }
+  .toc-preview tr:nth-child(2n) {
+    background-color: rgba(212,197,169,0.1);
+  }
   .toc-preview hr {
     border: none;
     height: 1px;
@@ -465,6 +474,40 @@ TEMPLATE = r'''<!DOCTYPE html>
     padding: 0;
     margin: 0;
   }
+  .toc-preview blockquote.alert {
+    border-left-width: 3px;
+    font-style: normal;
+    padding: 0.4em 0.8em;
+  }
+  .toc-preview blockquote.alert .alert-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Iosevka', 'JetBrains Mono', monospace;
+    font-weight: 600;
+    font-size: 0.78rem;
+    margin-bottom: 4px;
+  }
+  .toc-preview blockquote.alert .alert-title svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+  .toc-preview blockquote.alert-note { border-left-color: #4493f8; background: rgba(68,147,248,0.08); }
+  .toc-preview blockquote.alert-note .alert-title { color: #4493f8; }
+  .toc-preview blockquote.alert-note .alert-title svg { fill: #4493f8; }
+  .toc-preview blockquote.alert-tip { border-left-color: #3fb950; background: rgba(63,185,80,0.08); }
+  .toc-preview blockquote.alert-tip .alert-title { color: #3fb950; }
+  .toc-preview blockquote.alert-tip .alert-title svg { fill: #3fb950; }
+  .toc-preview blockquote.alert-important { border-left-color: #a371f7; background: rgba(163,113,247,0.08); }
+  .toc-preview blockquote.alert-important .alert-title { color: #a371f7; }
+  .toc-preview blockquote.alert-important .alert-title svg { fill: #a371f7; }
+  .toc-preview blockquote.alert-warning { border-left-color: #d29922; background: rgba(210,153,34,0.08); }
+  .toc-preview blockquote.alert-warning .alert-title { color: #d29922; }
+  .toc-preview blockquote.alert-warning .alert-title svg { fill: #d29922; }
+  .toc-preview blockquote.alert-caution { border-left-color: #f85149; background: rgba(248,81,73,0.08); }
+  .toc-preview blockquote.alert-caution .alert-title { color: #f85149; }
+  .toc-preview blockquote.alert-caution .alert-title svg { fill: #f85149; }
   .toc-preview .crosshair { display: none; }
   .toc-preview pre {
     font-size: 12px;
@@ -603,6 +646,100 @@ TEMPLATE = r'''<!DOCTYPE html>
     color: var(--text);
   }
   .editorial-body blockquote p:last-child { margin-bottom: 0; }
+
+  /* GitHub-style alert callouts */
+  .editorial-body blockquote.alert {
+    border-left-width: 4px;
+    font-style: normal;
+    padding: 12px 16px;
+  }
+  .editorial-body blockquote.alert .alert-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Iosevka', 'JetBrains Mono', monospace;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+  .editorial-body blockquote.alert .alert-title svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+  .editorial-body blockquote.alert-note {
+    border-left-color: #4493f8;
+    background: rgba(68, 147, 248, 0.08);
+  }
+  .editorial-body blockquote.alert-note .alert-title { color: #4493f8; }
+  .editorial-body blockquote.alert-note .alert-title svg { fill: #4493f8; }
+  .editorial-body blockquote.alert-tip {
+    border-left-color: #3fb950;
+    background: rgba(63, 185, 80, 0.08);
+  }
+  .editorial-body blockquote.alert-tip .alert-title { color: #3fb950; }
+  .editorial-body blockquote.alert-tip .alert-title svg { fill: #3fb950; }
+  .editorial-body blockquote.alert-important {
+    border-left-color: #a371f7;
+    background: rgba(163, 113, 247, 0.08);
+  }
+  .editorial-body blockquote.alert-important .alert-title { color: #a371f7; }
+  .editorial-body blockquote.alert-important .alert-title svg { fill: #a371f7; }
+  .editorial-body blockquote.alert-warning {
+    border-left-color: #d29922;
+    background: rgba(210, 153, 34, 0.08);
+  }
+  .editorial-body blockquote.alert-warning .alert-title { color: #d29922; }
+  .editorial-body blockquote.alert-warning .alert-title svg { fill: #d29922; }
+  .editorial-body blockquote.alert-caution {
+    border-left-color: #f85149;
+    background: rgba(248, 81, 73, 0.08);
+  }
+  .editorial-body blockquote.alert-caution .alert-title { color: #f85149; }
+  .editorial-body blockquote.alert-caution .alert-title svg { fill: #f85149; }
+
+  /* Footnotes */
+  .footnote-ref a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .footnote-ref a:hover {
+    text-decoration: underline;
+  }
+  .footnotes-section {
+    margin-top: 3em;
+    font-size: 0.88rem;
+    color: var(--text-light);
+  }
+  .footnotes-section hr {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin-bottom: 1.5em;
+    max-width: 200px;
+  }
+  .footnotes-section ol {
+    padding-left: 1.6em;
+    margin: 0;
+  }
+  .footnotes-section li {
+    margin-bottom: 0.5em;
+    line-height: 1.6;
+  }
+  .footnotes-section li:target {
+    background: rgba(176, 141, 87, 0.15);
+    border-radius: 3px;
+    padding: 2px 4px;
+  }
+  .footnote-backref {
+    color: var(--accent);
+    text-decoration: none;
+    margin-left: 4px;
+  }
+  .footnote-backref:hover {
+    text-decoration: underline;
+  }
 
   /* Inline code */
   .editorial-body code {
@@ -758,6 +895,28 @@ TEMPLATE = r'''<!DOCTYPE html>
     cursor: zoom-in;
     transition: box-shadow 0.3s ease;
   }
+  /* Badge rows — paragraphs containing only inline images/links */
+  .editorial-body p.badge-row {
+    text-align: center;
+    margin-bottom: 0.6em;
+  }
+  .editorial-body p.badge-row img {
+    display: inline;
+    margin: 0 3px;
+    box-shadow: none;
+    border-radius: 3px;
+    cursor: default;
+    vertical-align: middle;
+    max-height: 28px;
+  }
+  .editorial-body p.badge-row img:hover {
+    box-shadow: none;
+    outline: none;
+  }
+  .editorial-body p.badge-row a {
+    text-decoration: none;
+  }
+
   .editorial-body img:hover {
     box-shadow: 0 6px 24px rgba(0,0,0,0.15), 0 20px 40px -10px var(--hl-bg);
     outline: 1px solid var(--accent);
@@ -1080,6 +1239,290 @@ TEMPLATE = r'''<!DOCTYPE html>
     display: block;
     object-fit: contain;
   }
+  .hl-preview blockquote.alert {
+    border-left-width: 3px;
+    font-style: normal;
+    padding: 0.4em 0.8em;
+  }
+  .hl-preview blockquote.alert .alert-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Iosevka', 'JetBrains Mono', monospace;
+    font-weight: 600;
+    font-size: 0.78rem;
+    margin-bottom: 4px;
+  }
+  .hl-preview blockquote.alert .alert-title svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+  .hl-preview blockquote.alert-note { border-left-color: #4493f8; background: rgba(68,147,248,0.08); }
+  .hl-preview blockquote.alert-note .alert-title { color: #4493f8; }
+  .hl-preview blockquote.alert-note .alert-title svg { fill: #4493f8; }
+  .hl-preview blockquote.alert-tip { border-left-color: #3fb950; background: rgba(63,185,80,0.08); }
+  .hl-preview blockquote.alert-tip .alert-title { color: #3fb950; }
+  .hl-preview blockquote.alert-tip .alert-title svg { fill: #3fb950; }
+  .hl-preview blockquote.alert-important { border-left-color: #a371f7; background: rgba(163,113,247,0.08); }
+  .hl-preview blockquote.alert-important .alert-title { color: #a371f7; }
+  .hl-preview blockquote.alert-important .alert-title svg { fill: #a371f7; }
+  .hl-preview blockquote.alert-warning { border-left-color: #d29922; background: rgba(210,153,34,0.08); }
+  .hl-preview blockquote.alert-warning .alert-title { color: #d29922; }
+  .hl-preview blockquote.alert-warning .alert-title svg { fill: #d29922; }
+  .hl-preview blockquote.alert-caution { border-left-color: #f85149; background: rgba(248,81,73,0.08); }
+  .hl-preview blockquote.alert-caution .alert-title { color: #f85149; }
+  .hl-preview blockquote.alert-caution .alert-title svg { fill: #f85149; }
+
+  /* Task list checkboxes */
+  .editorial-body .contains-task-list {
+    list-style: none;
+    padding-left: 0.6em;
+  }
+  .editorial-body li input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: var(--accent);
+    transform: scale(1.2);
+    vertical-align: middle;
+    pointer-events: none;
+  }
+
+  /* Heading anchor links */
+  .heading-anchor {
+    opacity: 0;
+    margin-left: 8px;
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.6em;
+    vertical-align: middle;
+    transition: opacity 0.2s ease;
+  }
+  .editorial-body h2:hover .heading-anchor,
+  .editorial-body h3:hover .heading-anchor,
+  .editorial-body h4:hover .heading-anchor {
+    opacity: 0.5;
+  }
+  .heading-anchor:hover {
+    opacity: 1 !important;
+    color: var(--accent);
+  }
+
+  /* Reading time */
+  .reading-time {
+    text-align: center;
+    font-family: 'Iosevka', 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-bottom: 0;
+    letter-spacing: 0.03em;
+  }
+
+  /* Progress bar */
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--accent);
+    z-index: 200;
+    width: 0;
+    transition: width 0.1s linear, background-color 0.6s ease;
+  }
+
+  /* Back to top */
+  .back-to-top {
+    position: fixed;
+    bottom: 32px;
+    right: 48px;
+    width: 40px;
+    height: 40px;
+    background: var(--toolbar-bg);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--accent);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 55;
+  }
+  .back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  .back-to-top:hover {
+    background: var(--border);
+    color: var(--text);
+  }
+  .back-to-top svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+  }
+
+  /* Collapsible details/summary */
+  .editorial-body details {
+    margin: 1.2em 0;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: border-color 0.6s ease;
+  }
+  .editorial-body details summary {
+    cursor: pointer;
+    padding: 12px 16px;
+    font-weight: 600;
+    font-family: 'Iosevka', 'JetBrains Mono', monospace;
+    font-size: 0.95rem;
+    color: var(--text);
+    background: var(--table-header-bg);
+    user-select: none;
+    transition: background-color 0.2s ease;
+  }
+  .editorial-body details summary:hover {
+    background: var(--border);
+  }
+  .editorial-body details[open] summary {
+    border-bottom: 1px solid var(--border);
+  }
+  .editorial-body details > :not(summary) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .editorial-body details > p:first-of-type {
+    margin-top: 12px;
+  }
+  .editorial-body details > :last-child {
+    margin-bottom: 12px;
+  }
+
+  /* Search overlay */
+  .search-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 300;
+    display: flex;
+    justify-content: center;
+    padding-top: 15vh;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+  .search-overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .search-box {
+    width: 560px;
+    max-height: 60vh;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 16px 64px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-self: flex-start;
+  }
+  .search-input-wrap {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    gap: 10px;
+  }
+  .search-input-wrap svg {
+    width: 18px;
+    height: 18px;
+    fill: var(--text-light);
+    flex-shrink: 0;
+  }
+  .search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: 'Source Serif 4', 'Georgia', serif;
+    font-size: 1rem;
+    color: var(--text);
+  }
+  .search-input::placeholder {
+    color: var(--text-light);
+  }
+  .search-count {
+    font-family: 'Iosevka', 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-light);
+    white-space: nowrap;
+  }
+  .search-results {
+    overflow-y: auto;
+    flex: 1;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+  .search-result-item {
+    padding: 10px 16px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--text);
+    transition: background 0.1s ease;
+  }
+  .search-result-item:hover,
+  .search-result-item.active {
+    background: var(--blockquote-bg);
+  }
+  .search-result-item mark {
+    background: var(--hl-bg);
+    color: inherit;
+    border-radius: 2px;
+    padding: 0 2px;
+  }
+  .search-hint {
+    padding: 20px 16px;
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.85rem;
+  }
+  .search-hint kbd {
+    display: inline-block;
+    padding: 2px 6px;
+    font-family: 'Iosevka', 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    margin: 0 2px;
+  }
+
+  /* Print stylesheet */
+  @media print {
+    .toc-sidebar, .toolbar, .hl-markers, .hl-preview, .toc-preview,
+    .back-to-top, .progress-bar, .highlight-marker, .toast,
+    .search-overlay, .copy-code-btn, .code-lang { display: none !important; }
+    .main-content { margin-left: 0 !important; padding: 0 !important; }
+    .editorial-body { max-width: 100%; }
+    .corner-section { padding: 12px 0; margin: 1em 0; }
+    .crosshair { display: none !important; }
+    body { font-size: 11pt; line-height: 1.6; background: #fff !important; color: #000 !important; }
+    .editorial-body pre { break-inside: avoid; box-shadow: none !important; outline: none !important; }
+    .editorial-body table { break-inside: avoid; box-shadow: none !important; outline: none !important; }
+    .editorial-body img { break-inside: avoid; max-width: 100%; box-shadow: none !important; outline: none !important; }
+    .editorial-body blockquote { break-inside: avoid; }
+    .editorial-title { font-size: 1.8rem; }
+    .heading-anchor { display: none !important; }
+    a { color: inherit !important; text-decoration: underline; }
+    a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #666; }
+  }
 
   /* Responsive: collapse TOC on small screens */
   @media (max-width: 900px) {
@@ -1102,6 +1545,9 @@ TEMPLATE = r'''<!DOCTYPE html>
   </button>
   <button class="toolbar-btn" id="zenToggle" aria-label="Toggle zen mode" title="Zen mode">
     <svg viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+  </button>
+  <button class="toolbar-btn" id="searchToggle" aria-label="Search" title="Search (/ or s)">
+    <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
   </button>
   <button class="toolbar-btn" id="clearHighlights" aria-label="Clear all highlights" title="Clear all highlights">
     <svg viewBox="0 0 24 24" style="fill:currentColor"><path d="M7 14l5-5 5 5z"/><rect x="9" y="14" width="6" height="4" rx="1"/><line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -1127,6 +1573,22 @@ TEMPLATE = r'''<!DOCTYPE html>
 <div class="hl-markers" id="hlMarkers"></div>
 <div class="hl-preview" id="hlPreview"></div>
 <div class="img-overlay" id="imgOverlay"><img id="imgOverlayImg" src="" alt=""></div>
+<div class="progress-bar" id="progressBar"></div>
+<button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+  <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+</button>
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <div class="search-input-wrap">
+      <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      <input type="text" class="search-input" id="searchInput" placeholder="Search document..." autocomplete="off">
+      <span class="search-count" id="searchCount"></span>
+    </div>
+    <div class="search-results" id="searchResults">
+      <div class="search-hint">Type to search. Use <kbd>↑</kbd><kbd>↓</kbd> to navigate, <kbd>Enter</kbd> to jump.</div>
+    </div>
+  </div>
+</div>
 
 <script>
 const MD_B64 = "__MD_B64__";
@@ -1169,7 +1631,34 @@ function unstashMath(text) {
   });
 }
 
-var processedMd = stashMath(RAW_MD);
+// ---- Emoji shortcodes ----
+var _emojiMap = {};
+'smile:😄,laughing:😆,joy:😂,heart_eyes:😍,wink:😉,thinking:🤔,shrug:🤷,facepalm:🤦,thumbsup:👍,thumbsdown:👎,clap:👏,wave:👋,raised_hands:🙌,pray:🙏,muscle:💪,eyes:👀,brain:🧠,ok_hand:👌,point_right:👉,point_left:👈,point_up:👆,point_down:👇,v:✌️,heart:❤️,fire:🔥,star:⭐,sparkles:✨,zap:⚡,boom:💥,100:💯,tada:🎉,confetti:🎊,trophy:🏆,crown:👑,gem:💎,rocket:🚀,check:✅,white_check_mark:✅,x:❌,warning:⚠️,no_entry:⛔,stop_sign:🛑,construction:🚧,question:❓,exclamation:❗,bulb:💡,memo:📝,book:📖,link:🔗,lock:🔒,unlock:🔓,key:🔑,gear:⚙️,wrench:🔧,hammer:🔨,bug:🐛,money:💰,chart:📈,chart_down:📉,clipboard:📋,pin:📌,bell:🔔,megaphone:📣,mail:📧,package:📦,calendar:📅,clock:🕐,hourglass:⏳,earth:🌍,sun:☀️,moon:🌙,cloud:☁️,rainbow:🌈,ocean:🌊,mountain:🏔️,tree:🌲,flower:🌸,leaf:🍃,apple:🍎,coffee:☕,pizza:🍕,cake:🎂,beer:🍺,dog:🐕,cat:🐈,unicorn:🦄,penguin:🐧,fox:🦊,lion:🦁,ghost:👻,skull:💀,robot:🤖,alien:👽,poop:💩,sob:😭,angry:😠,cool:😎,nerd:🤓,sleeping:😴,devil:😈,angel:😇,see_no_evil:🙈,hear_no_evil:🙉,speak_no_evil:🙊,plus1:👍,minus1:👎,info:ℹ️,red_circle:🔴,blue_circle:🔵,green_circle:🟢,yellow_circle:🟡,arrow_up:⬆️,arrow_down:⬇️,arrow_left:⬅️,arrow_right:➡️,recycle:♻️,infinity:♾️'.split(',').forEach(function(pair) {
+  var i = pair.indexOf(':');
+  _emojiMap[pair.slice(0, i)] = pair.slice(i + 1);
+});
+
+// ---- Footnotes preprocessing ----
+var _fnDefs = {};
+var _fnOrder = [];
+var fnProcessed = RAW_MD;
+fnProcessed = fnProcessed.replace(/^\[\^([^\]]+)\]:\s*(.+)$/gm, function(m, id, text) {
+  _fnDefs[id] = text.trim();
+  return '';
+});
+fnProcessed = fnProcessed.replace(/\[\^([^\]]+)\]/g, function(m, id) {
+  if (!(id in _fnDefs)) return m;
+  if (_fnOrder.indexOf(id) === -1) _fnOrder.push(id);
+  var num = _fnOrder.indexOf(id) + 1;
+  return '<sup class="footnote-ref"><a href="#fn-' + id + '" id="fnref-' + id + '">' + num + '</a></sup>';
+});
+
+// ---- Emoji replacement ----
+fnProcessed = fnProcessed.replace(/:([a-z0-9_]+):/g, function(m, name) {
+  return _emojiMap[name] || m;
+});
+
+var processedMd = stashMath(fnProcessed);
 let html = unstashMath(marked.parse(processedMd));
 const container = document.getElementById('content');
 
@@ -1202,14 +1691,103 @@ titleEl.innerHTML = titleText;
 const divider = document.createElement('hr');
 divider.className = 'header-divider';
 
+// Reading time
+var _wordCount = RAW_MD.split(/\s+/).filter(function(w) { return w.length > 0; }).length;
+var _readMin = Math.max(1, Math.round(_wordCount / 250));
+var readingTimeEl = document.createElement('div');
+readingTimeEl.className = 'reading-time';
+readingTimeEl.textContent = _wordCount.toLocaleString() + ' words \u00b7 ' + _readMin + ' min read';
+
 // Insert content into DOM with IDs already in place
 container.appendChild(titleEl);
+container.appendChild(readingTimeEl);
 container.appendChild(divider);
 const bodyEl = document.createElement('div');
 bodyEl.innerHTML = html;
 while (bodyEl.firstChild) {
   container.appendChild(bodyEl.firstChild);
 }
+
+// ---- GitHub-style alerts ----
+var ALERT_ICONS = {
+  note: '<svg viewBox="0 0 16 16"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/></svg>',
+  tip: '<svg viewBox="0 0 16 16"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"/></svg>',
+  important: '<svg viewBox="0 0 16 16"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"/></svg>',
+  warning: '<svg viewBox="0 0 16 16"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"/></svg>',
+  caution: '<svg viewBox="0 0 16 16"><path d="M4.47.22A.749.749 0 0 1 5 0h6c.199 0 .389.079.53.22l4.25 4.25c.141.14.22.331.22.53v6a.749.749 0 0 1-.22.53l-4.25 4.25A.749.749 0 0 1 11 16H5a.749.749 0 0 1-.53-.22L.22 11.53A.749.749 0 0 1 0 11V5c0-.199.079-.389.22-.53Zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5ZM8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/></svg>'
+};
+container.querySelectorAll('blockquote').forEach(function(bq) {
+  var firstP = bq.querySelector('p');
+  if (!firstP) return;
+  var innerHtml = firstP.innerHTML;
+  var match = innerHtml.match(/^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]/i);
+  if (!match) return;
+  var type = match[1].toLowerCase();
+  firstP.innerHTML = innerHtml.replace(/^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\s*(<br\s*\/?>)?\s*/i, '');
+  if (!firstP.innerHTML.trim()) firstP.remove();
+  bq.classList.add('alert', 'alert-' + type);
+  var titleDiv = document.createElement('div');
+  titleDiv.className = 'alert-title';
+  titleDiv.innerHTML = ALERT_ICONS[type] + ' ' + type.charAt(0).toUpperCase() + type.slice(1);
+  bq.insertBefore(titleDiv, bq.firstChild);
+});
+
+// ---- Footnotes section ----
+if (_fnOrder.length) {
+  var fnSection = document.createElement('div');
+  fnSection.className = 'footnotes-section';
+  var fnHtml = '<hr><ol>';
+  _fnOrder.forEach(function(id) {
+    fnHtml += '<li id="fn-' + id + '">' + marked.parseInline(_fnDefs[id]) + ' <a href="#fnref-' + id + '" class="footnote-backref" title="Back to reference">\u21a9</a></li>';
+  });
+  fnHtml += '</ol>';
+  fnSection.innerHTML = fnHtml;
+  container.appendChild(fnSection);
+}
+
+// ---- Heading anchor links ----
+container.querySelectorAll('h2[id], h3[id], h4[id]').forEach(function(h) {
+  var a = document.createElement('a');
+  a.className = 'heading-anchor';
+  a.href = '#' + h.id;
+  a.textContent = '#';
+  a.title = 'Copy link';
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    history.replaceState(null, '', '#' + h.id);
+    navigator.clipboard.writeText(location.href).then(function() {
+      showToast('Link copied');
+    });
+  });
+  h.appendChild(a);
+});
+
+// ---- Task list checkboxes ----
+container.querySelectorAll('li').forEach(function(li) {
+  var cb = li.querySelector('input[type="checkbox"]');
+  if (cb) {
+    var ul = li.parentNode;
+    if (ul && !ul.classList.contains('contains-task-list')) {
+      ul.classList.add('contains-task-list');
+    }
+  }
+});
+
+// Detect badge rows — paragraphs containing only images (possibly wrapped in links)
+container.querySelectorAll('p').forEach(function(p) {
+  var dominated = p.childNodes.length > 0;
+  for (var i = 0; i < p.childNodes.length; i++) {
+    var n = p.childNodes[i];
+    if (n.nodeType === 3 && n.textContent.trim()) { dominated = false; break; }
+    if (n.nodeType === 1) {
+      var tag = n.tagName;
+      if (tag === 'IMG') continue;
+      if (tag === 'A' && n.querySelector('img') && n.childNodes.length === 1) continue;
+      dominated = false; break;
+    }
+  }
+  if (dominated && p.querySelectorAll('img').length >= 2) p.classList.add('badge-row');
+});
 
 // Drop cap on first paragraph
 const allP = container.querySelectorAll('p');
@@ -1397,6 +1975,22 @@ function updateActiveToc() {
 window.addEventListener('scroll', updateActiveToc, { passive: true });
 updateActiveToc();
 
+// ---- Progress bar + Back to top ----
+var _progressBar = document.getElementById('progressBar');
+var _backToTop = document.getElementById('backToTop');
+function _updateScrollUI() {
+  var scrollTop = window.scrollY;
+  var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  var pct = docHeight > 0 ? Math.min(100, (scrollTop / docHeight) * 100) : 0;
+  _progressBar.style.width = pct + '%';
+  _backToTop.classList.toggle('visible', scrollTop > 400);
+}
+window.addEventListener('scroll', _updateScrollUI, { passive: true });
+_updateScrollUI();
+_backToTop.addEventListener('click', function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
 // ---- Sidebar references ----
 const tocSidebar = document.getElementById('tocSidebar');
 const mainContent = document.getElementById('mainContent');
@@ -1464,7 +2058,7 @@ if (savedTheme && THEMES.includes(savedTheme)) {
   currentThemeIndex = THEMES.indexOf(savedTheme);
   applyTheme(savedTheme);
 } else {
-  applyTheme('light');
+  applyTheme('__DEFAULT_THEME__');
 }
 
 // ---- Zen mode toggle ----
@@ -1483,16 +2077,23 @@ imgOverlay.addEventListener('click', function() {
   imgOverlay.classList.remove('visible');
 });
 
-// Escape key exits zen mode or lightbox
+// ---- Global keyboard shortcuts ----
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
-    if (imgOverlay.classList.contains('visible')) {
+    var searchOv = document.getElementById('searchOverlay');
+    if (searchOv.classList.contains('visible')) {
+      _closeSearch();
+    } else if (imgOverlay.classList.contains('visible')) {
       imgOverlay.classList.remove('visible');
     } else if (zenActive) {
       zenActive = false;
       document.body.classList.remove('zen-mode');
       zenBtn.title = 'Zen mode';
     }
+  }
+  if ((e.key === '/' || e.key === 's') && !e.target.closest('input, textarea, [contenteditable]')) {
+    e.preventDefault();
+    _openSearch();
   }
 });
 
@@ -1832,6 +2433,115 @@ document.getElementById('clearHighlights').addEventListener('click', function() 
   showToast('All highlights cleared');
 });
 
+// ---- In-page search ----
+var _searchOverlay = document.getElementById('searchOverlay');
+var _searchInput = document.getElementById('searchInput');
+var _searchResults = document.getElementById('searchResults');
+var _searchCount = document.getElementById('searchCount');
+var _searchActiveIdx = -1;
+var _searchMatches = [];
+
+function _openSearch() {
+  _searchOverlay.classList.add('visible');
+  _searchInput.focus();
+  _searchInput.select();
+}
+function _closeSearch() {
+  _searchOverlay.classList.remove('visible');
+  _searchInput.value = '';
+  _searchCount.textContent = '';
+  _searchActiveIdx = -1;
+  _searchMatches = [];
+  _searchResults.innerHTML = '<div class="search-hint">Type to search. Use <kbd>\u2191</kbd><kbd>\u2193</kbd> to navigate, <kbd>Enter</kbd> to jump.</div>';
+}
+function _escapeHtml(s) {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+document.getElementById('searchToggle').addEventListener('click', _openSearch);
+_searchOverlay.addEventListener('click', function(e) {
+  if (e.target === _searchOverlay) _closeSearch();
+});
+
+_searchInput.addEventListener('input', function() {
+  var query = this.value.trim().toLowerCase();
+  _searchActiveIdx = -1;
+  _searchMatches = [];
+  if (!query || query.length < 2) {
+    _searchCount.textContent = '';
+    _searchResults.innerHTML = '<div class="search-hint">Type to search. Use <kbd>\u2191</kbd><kbd>\u2193</kbd> to navigate, <kbd>Enter</kbd> to jump.</div>';
+    return;
+  }
+  var contentEl = document.getElementById('content');
+  var walker = document.createTreeWalker(contentEl, NodeFilter.SHOW_TEXT);
+  while (walker.nextNode()) {
+    var node = walker.currentNode;
+    if (node.parentNode.closest('.footnotes-section, .reading-time, .editorial-end')) continue;
+    var text = node.textContent;
+    var lower = text.toLowerCase();
+    var idx = lower.indexOf(query);
+    while (idx !== -1) {
+      _searchMatches.push({ node: node, offset: idx, length: query.length, text: text });
+      idx = lower.indexOf(query, idx + 1);
+    }
+  }
+  _searchCount.textContent = _searchMatches.length + ' match' + (_searchMatches.length !== 1 ? 'es' : '');
+  if (!_searchMatches.length) {
+    _searchResults.innerHTML = '<div class="search-hint">No results found.</div>';
+    return;
+  }
+  var html = '';
+  _searchMatches.forEach(function(match, i) {
+    var t = match.text;
+    var s = Math.max(0, match.offset - 40);
+    var e = Math.min(t.length, match.offset + match.length + 40);
+    var before = (s > 0 ? '\u2026' : '') + t.slice(s, match.offset);
+    var matched = t.slice(match.offset, match.offset + match.length);
+    var after = t.slice(match.offset + match.length, e) + (e < t.length ? '\u2026' : '');
+    html += '<div class="search-result-item" data-idx="' + i + '">';
+    html += _escapeHtml(before) + '<mark>' + _escapeHtml(matched) + '</mark>' + _escapeHtml(after);
+    html += '</div>';
+  });
+  _searchResults.innerHTML = html;
+  _searchResults.querySelectorAll('.search-result-item').forEach(function(item) {
+    item.addEventListener('click', function() {
+      _jumpToMatch(parseInt(this.dataset.idx));
+    });
+  });
+});
+
+function _jumpToMatch(idx) {
+  var match = _searchMatches[idx];
+  if (!match) return;
+  var el = match.node.parentNode;
+  if (!el) return;
+  _closeSearch();
+  el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  el.style.transition = 'background-color 0.3s ease';
+  el.style.backgroundColor = 'rgba(176,141,87,0.2)';
+  setTimeout(function() { el.style.backgroundColor = ''; }, 2000);
+}
+
+_searchInput.addEventListener('keydown', function(e) {
+  var items = _searchResults.querySelectorAll('.search-result-item');
+  if (!items.length) return;
+  if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    _searchActiveIdx = Math.min(_searchActiveIdx + 1, items.length - 1);
+    items.forEach(function(el, i) { el.classList.toggle('active', i === _searchActiveIdx); });
+    if (items[_searchActiveIdx]) items[_searchActiveIdx].scrollIntoView({ block: 'nearest' });
+  } else if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    _searchActiveIdx = Math.max(_searchActiveIdx - 1, 0);
+    items.forEach(function(el, i) { el.classList.toggle('active', i === _searchActiveIdx); });
+    if (items[_searchActiveIdx]) items[_searchActiveIdx].scrollIntoView({ block: 'nearest' });
+  } else if (e.key === 'Enter') {
+    e.preventDefault();
+    if (_searchActiveIdx >= 0) _jumpToMatch(_searchActiveIdx);
+    else if (items.length) _jumpToMatch(0);
+  }
+});
+
 // Restore saved highlights by matching text content
 try {
   var saved = JSON.parse(localStorage.getItem(_hlKey) || '[]');
@@ -1864,26 +2574,34 @@ try {
 </html>'''
 
 
-def render(markdown: str) -> str:
+VALID_THEMES = ('light', 'dark', 'sepia', 'nord', 'dracula', 'green', 'rose', 'ocean')
+
+
+def render(markdown: str, theme: str = 'light') -> str:
     """Convert a markdown string to a self-contained HTML string.
 
     Args:
         markdown: Raw markdown text.
+        theme: Default theme. One of: light, dark, sepia, nord, dracula,
+            green, rose, ocean.
 
     Returns:
         A complete, self-contained HTML page as a string.
     """
+    if theme not in VALID_THEMES:
+        raise ValueError(f"Invalid theme '{theme}'. Must be one of: {', '.join(VALID_THEMES)}")
     md_b64 = base64.b64encode(markdown.encode('utf-8')).decode('ascii')
-    return TEMPLATE.replace('__MD_B64__', md_b64)
+    return TEMPLATE.replace('__MD_B64__', md_b64).replace('__DEFAULT_THEME__', theme)
 
 
-def convert(input_path: str, output_path: str | None = None) -> str:
+def convert(input_path: str, output_path: str | None = None, theme: str = 'light') -> str:
     """Convert a markdown file to an HTML file.
 
     Args:
         input_path: Path to the input markdown file.
         output_path: Path for the output HTML file. If None, replaces
             the .md extension with .html.
+        theme: Default theme.
 
     Returns:
         The generated HTML string.
@@ -1895,7 +2613,7 @@ def convert(input_path: str, output_path: str | None = None) -> str:
         base, _ = os.path.splitext(input_path)
         output_path = base + '.html'
 
-    html = render(md_content)
+    html = render(md_content, theme=theme)
 
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(html)
@@ -1904,18 +2622,20 @@ def convert(input_path: str, output_path: str | None = None) -> str:
 
 
 def main():
-    if len(sys.argv) < 2:
-        print("Usage: gloss <input.md> [output.html]")
+    import argparse
+    parser = argparse.ArgumentParser(description='Convert Markdown to beautiful HTML.')
+    parser.add_argument('input', help='Input markdown file')
+    parser.add_argument('output', nargs='?', default=None, help='Output HTML file')
+    parser.add_argument('--theme', choices=VALID_THEMES, default='light',
+                        help='Default theme (default: light)')
+    args = parser.parse_args()
+
+    if not os.path.isfile(args.input):
+        print(f"Error: '{args.input}' not found.")
         sys.exit(1)
 
-    input_path = sys.argv[1]
-    if not os.path.isfile(input_path):
-        print(f"Error: '{input_path}' not found.")
-        sys.exit(1)
-
-    output_path = sys.argv[2] if len(sys.argv) >= 3 else None
-    convert(input_path, output_path)
-    out = output_path or os.path.splitext(input_path)[0] + '.html'
+    convert(args.input, args.output, theme=args.theme)
+    out = args.output or os.path.splitext(args.input)[0] + '.html'
     print(f"Done! {out}")
 
 

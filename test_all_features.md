@@ -1,5 +1,7 @@
 # Feature Test Document
 
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://example.com) [![License](https://img.shields.io/badge/license-MIT-blue)](https://example.com) [![Python](https://img.shields.io/badge/python-3.12-yellow)](https://example.com) [![Coverage](https://img.shields.io/badge/coverage-94%25-green)](https://example.com)
+
 This is the introduction paragraph that should have a drop cap on the first letter. It demonstrates the editorial styling with justified text, automatic hyphenation, and the warm parchment aesthetic. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 ## Typography and Fonts
@@ -272,6 +274,104 @@ flowchart TD
 > - Item one
 > - Item two
 > - Item three
+
+## GitHub-Style Alerts
+
+> [!NOTE]
+> Useful information that users should know, even when skimming content.
+
+> [!TIP]
+> Helpful advice for doing things better or more easily.
+
+> [!IMPORTANT]
+> Key information users need to know to achieve their goal.
+
+> [!WARNING]
+> Urgent info that needs immediate user attention to avoid problems.
+
+> [!CAUTION]
+> Advises about risks or negative outcomes of certain actions.
+
+## Footnotes
+
+Here is a sentence with a footnote[^1]. And here is another one[^2].
+
+This paragraph references the first footnote again[^1] and introduces a third[^note].
+
+[^1]: This is the first footnote definition.
+[^2]: This is the second footnote with **bold** and `code` formatting.
+[^note]: Footnotes can use text identifiers too, not just numbers.
+
+## Alert Edge Cases
+
+> [!NOTE]
+> This is a multi-line note.
+> It spans several lines to test wrapping behavior.
+> - With a list inside
+> - And another item
+
+> [!TIP]
+> Use `code snippets` and **bold text** inside alerts to see formatting preserved.
+
+> [!IMPORTANT]
+> Key information with a [link](https://example.com) and some `inline code`.
+
+> [!WARNING]
+> This warning has multiple paragraphs.
+>
+> This is the second paragraph of the warning.
+
+> [!CAUTION]
+> Proceed with care! This action is **irreversible**.
+
+## Task Lists
+
+- [x] Add footnotes support
+- [x] Add GitHub-style alerts
+- [x] Add badge row rendering
+- [x] Add default theme option
+- [x] Add task list checkboxes
+- [ ] World domination
+- [ ] Take a nap
+
+## Emoji Shortcodes
+
+Here are some emojis: :fire: :rocket: :sparkles: :tada: :100:
+
+:check: This is done! :thumbsup:
+
+:warning: Be careful with :bug: in production :skull:
+
+:heart: :star: :zap: :coffee: :pizza:
+
+## Collapsible Sections
+
+<details>
+<summary>Click to expand implementation details</summary>
+
+This content is hidden by default. It can contain any markdown:
+
+- Lists work here
+- **Bold** and *italic* too
+- Even `code`
+
+```python
+def hidden_function():
+    return "surprise!"
+```
+
+</details>
+
+<details>
+<summary>Another collapsible section</summary>
+
+More hidden content. This is useful for FAQs, long code samples, or optional reading.
+
+</details>
+
+## Search
+
+Press `/` or `s` to open the search overlay. Try searching for "fibonacci", "mermaid", or "crosshair".
 
 ## Lists
 
