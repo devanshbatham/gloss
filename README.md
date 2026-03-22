@@ -4,13 +4,18 @@
 
 
 
-![](https://raw.githubusercontent.com/devanshbatham/gloss/refs/heads/main/static/demo-c.png)
+![](https://raw.githubusercontent.com/devanshbatham/gloss/refs/heads/main/static/demo-a.jpg)
 
+![](https://raw.githubusercontent.com/devanshbatham/gloss/refs/heads/main/static/demo-b.jpg)
 
-![](https://raw.githubusercontent.com/devanshbatham/gloss/refs/heads/main/static/demo-a.png)
+![](https://raw.githubusercontent.com/devanshbatham/gloss/refs/heads/main/static/demo-c.jpg)
 
+![](https://raw.githubusercontent.com/devanshbatham/gloss/refs/heads/main/static/demo-d.jpg)
 
-![](https://raw.githubusercontent.com/devanshbatham/gloss/refs/heads/main/static/demo-b.png)
+![](https://raw.githubusercontent.com/devanshbatham/gloss/refs/heads/main/static/demo-e.jpg)
+
+![](https://raw.githubusercontent.com/devanshbatham/gloss/refs/heads/main/static/demo-f.jpg)
+
 
 
 ## Features
