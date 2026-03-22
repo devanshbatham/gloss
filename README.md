@@ -1,21 +1,32 @@
 # Gloss
 
-Convert Markdown files into beautiful, editorial-style HTML pages.
+✨ Convert Markdown files into beautiful, editorial-style HTML pages.
+
+
+
+![](https://raw.githubusercontent.com/devanshbatham/gloss/refs/heads/main/static/demo-c.png)
+
+
+![](https://raw.githubusercontent.com/devanshbatham/gloss/refs/heads/main/static/demo-a.png)
+
+
+![](https://raw.githubusercontent.com/devanshbatham/gloss/refs/heads/main/static/demo-b.png)
+
 
 ## Features
 
-- **Editorial aesthetic** with serif typography, drop caps, and crosshair section accents
-- **8 themes** — Light, Dark, Sepia, Nord, Dracula, Green, Rose, Ocean
-- **Zen mode** for distraction-free reading
-- **Table of contents** sidebar with hover previews
-- **Text highlighting** — select text, click the marker to highlight. Persists across refreshes.
-- **Syntax highlighting** via highlight.js
-- **KaTeX** math rendering
-- **Mermaid** diagram support
+- **Editorial aesthetic**: with serif typography, drop caps, and crosshair section accents
+- **8 themes**: Light, Dark, Sepia, Nord, Dracula, Green, Rose, Ocean
+- **Zen mode**: for distraction-free reading
+- **Table of contents**: sidebar with hover previews
+- **Text highlighting**: select text, click the marker to highlight. Persists across refreshes.
+- **Syntax highlighting**: via highlight.js
+- **KaTeX**: math rendering
+- **Mermaid**: diagram support
 - **Image lightbox** — click images to zoom
 - Hover effects on code blocks, tables, and diagrams
 - Smooth theme transitions
-- Fully self-contained single HTML file output — zero dependencies
+- Fully self-contained single HTML file output
 
 ## Install
 
@@ -66,8 +77,6 @@ Install gloss into your project:
 uv pip install git+https://github.com/devansh/gloss
 ```
 
-### `gloss.render(markdown: str) -> str`
-
 Convert a markdown string to a self-contained HTML string:
 
 ```python
@@ -81,7 +90,6 @@ with open("output.html", "w") as f:
     f.write(html)
 ```
 
-### `gloss.convert(input_path, output_path=None) -> str`
 
 Convert a markdown file to an HTML file and return the HTML:
 
@@ -97,7 +105,7 @@ html = gloss.convert("report.md")  # writes report.html
 
 ## Try It
 
-The repo includes `test_all_features.md` — a comprehensive markdown file that exercises all supported features (headings, code blocks, math, mermaid diagrams, tables, images, blockquotes, etc.). Use it to see what gloss produces:
+The repo includes `test_all_features.md`, a comprehensive markdown file that exercises all supported features (headings, code blocks, math, mermaid diagrams, tables, images, blockquotes, etc.). Use it to see what gloss produces:
 
 ```bash
 gloss test_all_features.md
@@ -118,7 +126,3 @@ Or via the standalone single file (no install needed):
 python3 gloss.py test_all_features.md
 open test_all_features.html
 ```
-
-## License
-
-MIT
